@@ -1,0 +1,242 @@
+[{
+  "_id": {
+    "$oid": "5f083df7123e4b04880bfbd3"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594375671753,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083dfd123e4b04880bfbd4"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo2",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594375677471,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f083e02123e4b04880bfbd5"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo3",
+    "cena": 170,
+    "preduzece": "PNK",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594375682804,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f084a47123e4b04880bfbd6"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594378823213,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f084b8e123e4b04880bfbd7"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594379150023,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f084b8e123e4b04880bfbd8"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594379150023,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f084b8e123e4b04880bfbd9"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594379150023,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f087f34d766472eec9705d5"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo2",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1593292947608
+},{
+  "_id": {
+    "$oid": "5f087f54d766472eec9705d6"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Djubrivo2",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594194947608
+},{
+  "_id": {
+    "$oid": "5f087f66d766472eec9705d7"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594294947608
+},{
+  "_id": {
+    "$oid": "5f087f73d766472eec9705d8"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ARHIVIRANO",
+  "timestamp": 1594000947608
+},{
+  "_id": {
+    "$oid": "5f087f8fd766472eec9705d9"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 316,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594297947608
+},{
+  "_id": {
+    "$oid": "5f087fa0d766472eec9705da"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo3",
+    "cena": 170,
+    "preduzece": "PNK",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "NIJE ISPORUCENO",
+  "timestamp": 1594296947608
+}]

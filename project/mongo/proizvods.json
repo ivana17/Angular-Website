@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "5f062926f390813d00afbe01"
+  },
+  "naziv": "Lala",
+  "cena": 300,
+  "preduzece": "GRDN",
+  "tip": 0,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 28
+},{
+  "_id": {
+    "$oid": "5f06293bf390813d00afbe02"
+  },
+  "naziv": "Djubrivo2",
+  "cena": 300,
+  "preduzece": "GRDN",
+  "tip": 1,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 5
+},{
+  "_id": {
+    "$oid": "5f062decf390813d00afbe03"
+  },
+  "naziv": "Djubrivo3",
+  "cena": 170,
+  "preduzece": "PNK",
+  "tip": 1,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 8
+},{
+  "_id": {
+    "$oid": "5f08708d1dede61e8cb5a1cd"
+  },
+  "naziv": "Ruza",
+  "cena": 350,
+  "preduzece": "Farmia",
+  "tip": 0,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 0
+},{
+  "_id": {
+    "$oid": "5f0870ae1dede61e8cb5a1ce"
+  },
+  "naziv": "Djubrivo",
+  "cena": 110,
+  "preduzece": "Farmia",
+  "tip": 1,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 13
+},{
+  "_id": {
+    "$oid": "5f0870cc1dede61e8cb5a1cf"
+  },
+  "naziv": "Prskalica",
+  "cena": 240,
+  "preduzece": "PNK",
+  "tip": 1,
+  "ocenjivanja": 0,
+  "ocene": 0,
+  "komentari": null,
+  "progres": 7
+}]

@@ -1,0 +1,22 @@
+<html>
+  <header><app-my-header [korisnik]='korisnik'></app-my-header></header>
+  <body class="center">
+    <form>
+      <mat-card>
+        <table align="center">
+          <tr><td><h2>Promeni lozinku</h2></td></tr>
+          <tr><td><input type="password" placeholder="Lozinka" name="stara" [(ngModel)]='stara'></td></tr>
+          <tr><td><input type="password" placeholder="Nova lozinka" name="nova" [(ngModel)]='nova'></td></tr>
+          <span *ngIf="nova!=null && nova.length!=0">
+            <tr><td><input type="password" placeholder="Potvrdi novu lozinku" name="potvrda" [(ngModel)]='potvrda'></td></tr>
+          </span>
+          <tr><td><button class="btn" (click)='promeni()'>Gotovo</button></td></tr>
+        </table>
+        <p style="color: red;">{{ poruka }}</p>
+    </mat-card>  
+    </form>
+    
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>
+

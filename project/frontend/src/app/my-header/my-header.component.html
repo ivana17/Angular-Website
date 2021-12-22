@@ -1,0 +1,29 @@
+<div class="head">
+
+  <h1>
+    <button class="btn" routerLink="/">Početna</button>
+    
+  </h1>
+
+  <span *ngIf='korisnik'>
+    <mat-list>
+      <mat-list-item>
+        <div>
+        <mat-icon>account_box</mat-icon>
+        </div>
+        &nbsp;&nbsp;
+        <div *ngIf="korisnik.kor_ime=='admin'">
+          Admin
+        </div>
+        <div *ngIf='korisnik.tip==0;'>
+          {{ korisnik.ime }} {{ korisnik.prezime }}
+        </div>
+        <div *ngIf='korisnik.tip==1;'>
+          {{ korisnik.naziv }}
+        </div>
+        
+      </mat-list-item>
+    </mat-list>
+  </span>
+
+</div>

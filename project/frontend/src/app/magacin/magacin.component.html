@@ -1,0 +1,50 @@
+<html>
+    <header><app-my-header [korisnik]='ulogovan'></app-my-header></header>
+    <body>
+      <h1 class="rasadnik">{{ ulogovan.rasadnici[indexRas].naziv }}</h1>
+      <h1 class="naslov">Proizvodi</h1>
+      
+      <mat-form-field>
+        <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+      </mat-form-field>
+
+
+      <div class="mat-elevation-z8 data-table">
+        <mat-table #table [dataSource]="dataSource"  aria-label="Elements"> <!--matSort-->
+          
+          <ng-container matColumnDef="naziv" > <!--mat-sort-header-->
+            <mat-header-cell *matHeaderCellDef (click)="nazivSort()"> Naziv </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.naziv}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="cena" >
+            <mat-header-cell *matHeaderCellDef (click)="cenaSort()"> Cena </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.cena}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="preduzece">
+            <mat-header-cell *matHeaderCellDef (click)="preduzeceSort()"> Preduzece </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.preduzece}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="tip">
+            <mat-header-cell *matHeaderCellDef (click)="tipSort()"> Tip </mat-header-cell>
+            <mat-cell *matCellDef="let row"> 
+              <span *ngIf="row.tip=='0'">SADNICA</span> 
+              <span *ngIf="row.tip=='1'">PREPARAT</span> 
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="progres">
+            <mat-header-cell *matHeaderCellDef (click)="progresSort()"> Progres </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.progres}} </mat-cell>
+          </ng-container>
+        
+          <mat-header-row *matHeaderRowDef= "['naziv', 'cena', 'preduzece', 'tip', 'progres']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['naziv', 'cena', 'preduzece', 'tip', 'progres']"></mat-row>
+        </mat-table>
+      </div>
+
+    </body>
+    <footer><app-my-footer></app-my-footer></footer>
+</html>

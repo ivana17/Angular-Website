@@ -1,0 +1,128 @@
+<html>
+  <header><app-my-header [korisnik]='ulogovan'></app-my-header></header>
+    
+    <body>
+    
+      <h1 style="color: black;">Proizvodi</h1>
+      <div class="mat-elevation-z8 data-table">
+        <mat-table #table [dataSource]="dataSource" aria-label="Elements">
+          <ng-container matColumnDef="naziv">
+            <mat-header-cell *matHeaderCellDef> Naziv </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.naziv}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="cena">
+            <mat-header-cell *matHeaderCellDef> Cena </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.cena}} </mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="tip">
+            <mat-header-cell *matHeaderCellDef> Tip </mat-header-cell>
+            <mat-cell *matCellDef="let row"> 
+              <span *ngIf="row.tip=='0'">SADNICA</span> 
+              <span *ngIf="row.tip=='1'">PREPARAT</span> 
+            </mat-cell>
+          </ng-container>
+        
+          <mat-header-row *matHeaderRowDef="['naziv', 'cena', 'tip']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['naziv', 'cena', 'tip']"></mat-row>
+        </mat-table>
+      </div>
+
+      <h1 style="color: black;">Narudžbine</h1>
+      <div class="mat-elevation-z8 data-table">
+        <mat-table #table [dataSource]="matDataSourceN" aria-label="Elements">
+          <ng-container matColumnDef="naziv">
+            <mat-header-cell *matHeaderCellDef (click)="nazivSort()"> Naziv </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.proizvod.naziv}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="cena">
+            <mat-header-cell *matHeaderCellDef (click)="cenaSort()"> Cena </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.proizvod.cena}} </mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="tip">
+            <mat-header-cell *matHeaderCellDef (click)="tipSort()"> Tip </mat-header-cell>
+            <mat-cell *matCellDef="let row"> 
+              <span *ngIf="row.proizvod.tip=='0'">SADNICA</span> 
+              <span *ngIf="row.proizvod.tip=='1'">PREPARAT</span> 
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="kor_imePolj">
+            <mat-header-cell *matHeaderCellDef (click)="porucioSort()"> Poručio </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.kor_imePolj}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <mat-header-cell  *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+                 <button mat-button style="color: darkred;" (click)="prihvati(row)" >Prihvati</button>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="actions2">
+            <mat-header-cell  *matHeaderCellDef ></mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+                 <button mat-button style="color: darkred;" (click)="odbij(row)" >Odbij</button>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="stanje">
+            <mat-header-cell *matHeaderCellDef (click)="statusSort()"> Status </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <select [(ngModel)]="row.stanje">
+                <option *ngFor="let c of statusi" [ngValue]="c.name">{{c.name}}</option>
+              </select>
+            </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="actions3">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+                <button mat-button style="color: darkred;" (click)="azuriraj(row)" >Azuriraj</button>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="kurirAkcija">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row" >
+                <button mat-button style="color: darkred;" (click)="angazuj(row)">Angazuj kurira</button>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="['naziv', 'cena', 'tip', 'kor_imePolj', 'actions', 'actions2', 'stanje', 'actions3', 'kurirAkcija']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['naziv', 'cena', 'tip', 'kor_imePolj','actions', 'actions2', 'stanje', 'actions3', 'kurirAkcija']"></mat-row>
+        </mat-table>
+      </div>
+
+      <div style="text-align: center;">
+        <h2 style="color: black;">[Slobodni kuriri: {{ulogovan.kuriri}}]</h2>
+      </div>
+
+      <h1 style="color: black;">Arhivirane narudžbine</h1>
+      <div class="mat-elevation-z8 data-table">
+        <mat-table #table [dataSource]="dataSourceNArhivirano" aria-label="Elements">
+          <ng-container matColumnDef="dan">
+            <mat-header-cell *matHeaderCellDef> Dan </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <span *ngIf="row[0] == 0"> Danas </span> 
+              <span *ngIf="row[0] == 1"> Pre 1 dan </span>               
+              <span *ngIf="row[0] > 1"> Pre {{row[0]}} dana </span> 
+            </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="kolicina">
+            <mat-header-cell *matHeaderCellDef> Broj narudzbina </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row[1]}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="['dan', 'kolicina']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['dan', 'kolicina']"></mat-row>
+        </mat-table>
+      </div>
+      <footer><app-my-footer></app-my-footer></footer>
+    </body>
+
+    </html>

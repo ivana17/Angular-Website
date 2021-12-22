@@ -1,0 +1,35 @@
+.grid-container {
+  margin: 30px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 200px;
+  right: 15px;
+  bottom: 15px;
+  width: 700px;
+  min-width: 700px;
+  background-color: rgb(255, 197, 207); 
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+/*p*/
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+.header {
+  min-width: 1024px;
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+

@@ -1,0 +1,14 @@
+body, html{
+    margin: 0px;
+    height: 92%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+hr { display: block; height: 3px;
+    border: 0; border-top: 2px solid pink;
+    margin: 1em 0; padding: 0; 
+}

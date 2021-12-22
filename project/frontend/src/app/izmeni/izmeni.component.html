@@ -1,0 +1,38 @@
+<html>
+  <header><app-my-header [korisnik]='ulogovan'></app-my-header></header>
+  <body class="center">
+    <form *ngIf='korisnik'>
+      <mat-card>
+      <span *ngIf='korisnik.tip==0'>
+        <table align="center">
+          <tr><td colspan="2"><h2>Izmeni korisnika</h2></td></tr>
+          <tr><td><input type="text" placeholder="korisnik.ime" name="ime" [(ngModel)]='korisnik.ime'></td></tr>
+          <tr><td><input type="text" placeholder="Prezime" name="prezime" [(ngModel)]='korisnik.prezime'></td></tr>
+          <tr><td><input type="password" placeholder="Lozinka" name="lozinka" [(ngModel)]='korisnik.lozinka'></td></tr>
+          <tr><td><input type="text" placeholder="{{ korisnik.datum_rodjenja | date: 'dd.MM.yyyy'}}" onblur="(this.type='text')" id="date" onfocus="(this.type='date')" [(ngModel)]='korisnik.datum_rodjenja'></td></tr>
+          <tr><td><input type="text" placeholder="Mesto rodjenja" name="mesto" [(ngModel)]='korisnik.mesto_rodjenja'></td></tr>
+          <tr><td><input type="text" placeholder="Kontakt" name="kontakt" [(ngModel)]='korisnik.kontakt'></td></tr>
+          <tr><td><input type="text" placeholder="E-mail" name="email" [(ngModel)]='korisnik.email'></td></tr>
+          <tr><td align="center"><button class="btn" (click)='izmeni()'>IZMENI</button></td></tr>
+        </table>
+      </span>
+      <span *ngIf='korisnik.tip==1'>
+        <table align="center">
+          <tr><td colspan="2"><h2>Izmeni korisnika</h2></td></tr>
+          <tr><td><input type="text" placeholder="Pun naziv" name="naziv" [(ngModel)]='korisnik.naziv'></td></tr>
+          <tr><td><input type="password" placeholder="Lozinka" name="lozinka" [(ngModel)]='korisnik.lozinka'></td></tr>
+          <tr><td><input type="text" placeholder="{{ korisnik.datum_osnivanja | date: 'dd.MM.yyyy' }}" onblur="(this.type='text')" id="date" [(ngModel)]='korisnik.datum_osnivanja' onfocus="(this.type='date')"></td></tr>
+          <tr><td><input type="text" placeholder="Mesto osnivanja" name="mesto" [(ngModel)]='korisnik.mesto'></td></tr>
+          <tr><td><input type="text" placeholder="E-mail" name="email" [(ngModel)]='korisnik.email'></td></tr>
+          <tr><td align="center"><button class="btn" (click)='izmeni()'>IZMENI</button></td></tr>
+        </table>
+      </span>
+      </mat-card>
+    </form>
+    <form *ngIf='!korisnik'>
+      Korisnik nije lepo ucitan.
+    </form>
+
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

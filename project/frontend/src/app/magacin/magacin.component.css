@@ -1,0 +1,37 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.naslov {
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 23px;
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bolder;
+}
+
+.rasadnik {
+  color: darkmagenta;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.mat-form-field.mat-form-field {
+  width: auto;
+}

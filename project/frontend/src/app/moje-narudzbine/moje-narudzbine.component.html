@@ -1,0 +1,50 @@
+<html> 
+  <header><app-my-header [korisnik]='ulogovan'></app-my-header></header> 
+  <body>
+    <h1 class="naslov">Narudžbine</h1>
+    <div class="mat-elevation-z8 data-table">
+      <mat-table #table [dataSource]="dataSourceN" aria-label="Elements">
+        <ng-container matColumnDef="naziv">
+          <mat-header-cell *matHeaderCellDef> Naziv </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.proizvod.naziv}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="cena">
+          <mat-header-cell *matHeaderCellDef> Cena </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.proizvod.cena}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="tip">
+          <mat-header-cell *matHeaderCellDef> Tip </mat-header-cell>
+          <mat-cell *matCellDef="let row"> 
+            <span *ngIf="row.proizvod.tip=='0'">SADNICA</span> 
+            <span *ngIf="row.proizvod.tip=='1'">PREPARAT</span> 
+          </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="preduzece">
+          <mat-header-cell *matHeaderCellDef> Preduzece </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.proizvod.preduzece}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="stanje">
+          <mat-header-cell *matHeaderCellDef> Stanje </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.stanje}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <mat-header-cell  *matHeaderCellDef ></mat-header-cell>
+          <mat-cell *matCellDef="let row" >
+               <button mat-button style="color: darkred;" (click)="otkazi(row)" >Otkaži</button>
+          </mat-cell>
+        </ng-container>
+
+      
+        <mat-header-row *matHeaderRowDef="['naziv', 'cena', 'tip', 'preduzece', 'stanje', 'actions']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['naziv', 'cena', 'tip', 'preduzece', 'stanje', 'actions']"></mat-row>
+      </mat-table>
+    </div>
+  </body>
+  
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

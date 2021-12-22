@@ -1,0 +1,28 @@
+<html>
+  <header><app-my-header></app-my-header></header>
+  <body  class="center">
+    <form>
+      <mat-card>
+        <h2>Registruj se</h2>
+        <table align="center">
+          <tr><td><input type="text" placeholder="Pun naziv" name="naziv" [(ngModel)]='naziv'></td></tr>
+          <tr><td><input type="text" placeholder="Skraceni naziv" name="kor_ime" [(ngModel)]='kor_ime'></td></tr>
+          <tr><td><input type="password" placeholder="Lozinka" name="lozinka" [(ngModel)]='lozinka'></td></tr>
+          <tr><td><input type="password" placeholder="Potvrda lozinke" name="potvrda" [(ngModel)]='potvrda'></td></tr>
+          <tr><td><input type="date" placeholder="Datum osnivanja" name="datum" [(ngModel)]='datum'></td></tr>
+          <tr><td><input type="text" placeholder="Mesto osnivanja" name="mesto" [(ngModel)]='mesto'></td></tr>
+          <tr><td><input type="text" placeholder="E-mail" name="email" [(ngModel)]='email'></td></tr>
+          <tr><td><button class="btn" (click)='register()'>Gotovo</button></td></tr>
+        </table>
+        <p style="color: red;">{{ poruka }}</p>
+      </mat-card>
+      <br>
+      <div class="recaptcha">
+        <re-captcha (resolved)="resolved($event)" siteKey="6LeLJ6cZAAAAALFSqfzKOrVmK9e4etDjlzFoZrZL"></re-captcha>
+      </div>
+    </form>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>
+
+

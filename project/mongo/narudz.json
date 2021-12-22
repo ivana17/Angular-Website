@@ -1,0 +1,109 @@
+[{
+  "_id": {
+    "$oid": "5f06cc9212cda71ec0cff3a9"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo2",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f06cf1c12cda71ec0cff3aa"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Djubrivo2",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f06cfad12cda71ec0cff3ac"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f06d06112cda71ec0cff3ad"
+  },
+  "kor_imePolj": "ana",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo3",
+    "cena": 170,
+    "preduzece": "PNK",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f06d554479ba50c34f724f9"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 1,
+  "proizvod": {
+    "naziv": "Lala",
+    "cena": 300,
+    "preduzece": "GRDN",
+    "tip": 0,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f06d568479ba50c34f724fb"
+  },
+  "kor_imePolj": "mare",
+  "indexRasadnika": 0,
+  "proizvod": {
+    "naziv": "Djubrivo3",
+    "cena": 170,
+    "preduzece": "PNK",
+    "tip": 1,
+    "ocenjivanja": 0,
+    "ocene": 0,
+    "komentari": null,
+    "progres": 0
+  },
+  "stanje": "ISPORUKA U TOKU",
+  "__v": 0
+}]

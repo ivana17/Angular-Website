@@ -1,0 +1,110 @@
+<html>
+  <header><app-my-header [korisnik]='ulogovan'></app-my-header></header>
+  <body class="center" style="margin-top: 200px;">
+      <div *ngFor="let p of proizvodi; let i = index">
+        <div *ngIf='traznja'>
+          <span *ngIf="uporediStringove(p.naziv, trazeno_ime)">
+
+            <mat-card class="example-card" >
+              
+              <mat-card-header style="display: flex;justify-content: space-between">
+                <mat-card-title style="color: rgb(199, 21, 21);">{{ p.naziv }}</mat-card-title>
+                <mat-card-subtitle *ngIf='p.tip==0'>SADNICA</mat-card-subtitle>
+                <mat-card-subtitle *ngIf='p.tip==1'>PREPARAT</mat-card-subtitle>
+                <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button> 
+                
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="poruci(i)">Poruči</button>
+                  <button mat-menu-item (click)="izadji(i)">Izađi</button>
+                </mat-menu>
+                
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  Cena: <i>{{ p.cena }}</i> <br>
+                  Preduzeće: <i>{{ p.preduzece }}</i> <br>
+                  Ocena: 
+                  <span *ngIf='p.ocenjivanja==0'><i>Nije ocenjivano</i></span>
+                  <span *ngIf='p.ocenjivanja!=0'><i>{{ p.ocene/p.ocenjivanja }}</i></span> <br>
+                  <!--Komentari //uradi(prozor ili nesto)-->
+                </p>
+              </mat-card-content>
+              <mat-card-content *ngIf='porucivanje && i==indeksProizv'>
+                
+                Vaš broj rasadnika: {{ ulogovan.rasadnici.length }} <br>
+                <div *ngIf='ulogovan.rasadnici.length!=0'>
+                  Unesi redni broj rasadnika <br>&nbsp;&nbsp;
+                  <input type="text" placeholder="" [(ngModel)]='indeksRas'>
+                  <mat-card-actions>
+                    <button align="end" mat-button (click)="ok()">Poruči</button>
+                  </mat-card-actions>
+                  <i style="color: red;">{{poruka}}</i>
+                </div>
+                
+              </mat-card-content>
+            </mat-card>
+          </span>
+        </div>
+        <div *ngIf='!traznja'>
+          <mat-card class="example-card">
+            <mat-card-header style="display: flex;justify-content: space-between">
+              <mat-card-title style="color: rgb(199, 21, 21);">{{ p.naziv }}</mat-card-title>
+              <mat-card-subtitle *ngIf='p.tip==0'>SADNICA</mat-card-subtitle>
+              <mat-card-subtitle *ngIf='p.tip==1'>PREPARAT</mat-card-subtitle>
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button> 
+              
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="poruci(i)">Poruči</button>
+                <button mat-menu-item (click)="izadji(i)">Zatvori</button>
+              </mat-menu>
+              
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                Cena: <i>{{ p.cena }}</i> <br>
+                Preduzeće: <i>{{ p.preduzece }}</i> <br>
+                Ocena: 
+                <span *ngIf='p.ocenjivanja==0'><i>Nije ocenjivano</i></span>
+                <span *ngIf='p.ocenjivanja!=0'><i>{{ p.ocene/p.ocenjivanja }}</i></span> <br>
+                <!--Komentari //uradi(prozor ili nesto)-->
+              </p>
+            </mat-card-content>
+            <mat-card-content *ngIf='porucivanje && i==indeksProizv'>
+              
+              Vaš broj rasadnika: {{ ulogovan.rasadnici.length }} <br>
+              <div *ngIf='ulogovan.rasadnici.length!=0'>
+                Unesi podatke: <br>
+                <input type="text" placeholder="Broj komada" [(ngModel)]='brojkomada'>
+                <br>
+                <input type="text" placeholder="Indeks rasadnika" [(ngModel)]='indeksRas'>
+                <mat-card-actions>
+                  <button align="end" mat-button (click)="ok()">Poruči</button>
+                </mat-card-actions>
+                <i style="color: red;">{{poruka}}</i>
+              </div>
+              
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    <span><h5 style="position: fixed; top: 150px; left: 40px; font-family: cursive; font-size: 50px;">
+      <input type="text" placeholder="" [(ngModel)]='trazeno_ime'><br> &nbsp;
+      <button class="btn" (click)="pretrazi()">Pretraži</button><br>
+    </h5></span>
+
+    <span><h5 style="position: fixed; top: 150px; right: 40px; font-family: cursive; font-size: 50px;">
+      <button class="btn" (click)="prikaziSve()">Prikaži sve</button>
+    </h5></span>
+
+    <span>
+      <p style="position: fixed; bottom: 52px; left: 30px; font-family: cursive;">
+        <button class="prod" mat-stroked-button color="blue" (click)="mojenar()">Moje narudzbine</button>
+      </p>
+    </span>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

@@ -1,0 +1,45 @@
+
+<html>
+  <header><app-my-header [korisnik]='_admin'></app-my-header></header>
+
+  <body class="center">
+    <mat-list style="margin-top: 20px;">
+      <h1 style="font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Korisnici:</h1>
+      <hr>
+      <mat-list-item *ngFor="let item of korisniciArray;let i = index" >
+        <div style="display:flex; justify-content:space-between;align-items:center"
+          *ngIf='!(item.tip>2)'>
+          <div style="display:flex;align-items:center">
+            <mat-icon matListAvatar>person</mat-icon>
+
+            <div style="display:flex; flex-direction:column">
+              <div style="margin-bottom: 10px;">
+                <h3 style="font-weight: bold;"> {{item.kor_ime}}</h3>
+              </div>
+              <div style="margin-top:-30px">
+                <p>
+                  <span *ngIf='item.tip==0;'>
+                    <app-poljoprivrednik-detalji [poljo]='item'></app-poljoprivrednik-detalji>
+                  </span>
+                  <span *ngIf='item.tip==1;'>
+                    <app-preduzece-detalji [pred]='item'></app-preduzece-detalji>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <div>
+            <button mat-icon-button (click)="izmeni(item)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="obrisi(item)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

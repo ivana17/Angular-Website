@@ -1,0 +1,37 @@
+<!--
+<div style="position: fixed; bottom: 4px; right: 4px;">
+  <a routerLink="/lozinka/{{poljoprivrednik.kor_ime}}">Promeni lozinku</a>
+</div>
+-->
+<html>
+  <header><app-my-header [korisnik]='poljoprivrednik'></app-my-header></header>
+  <body class="center">
+    <div *ngIf="!(poljoprivrednik.rasadnici.length==0)">
+      <mat-card class="example-card" *ngFor="let rasadnik of poljoprivrednik.rasadnici;let i = index">
+        <mat-card-header>
+          <mat-card-title>{{ rasadnik.naziv }}</mat-card-title>
+          <mat-card-subtitle style="color: mediumvioletred;">{{ rasadnik.mesto }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p><app-rasadnik-detalji [rasadnik] = rasadnik></app-rasadnik-detalji></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="prikazi(rasadnik.naziv)">Prikaži</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div style="color: blueviolet; margin-top: 40px;font-size: 20px;" *ngIf="(poljoprivrednik.rasadnici.length==0)">
+      Nema rasadnika.
+    </div>
+    <span>
+      <p style="position: fixed; bottom: 52px; left: 30px; font-family: cursive;">
+        <button class="prod" mat-stroked-button color="accent" (click)="prodavnica()">Online <br> prodavnica</button>
+      </p>
+    </span>
+
+    <span><h5 style="position: fixed; bottom: 160px; left: 30px; font-family: cursive;">
+      <button class="btn success" (click)="novi_rasadnik()"><i><b>+</b> &nbsp; Novi rasadnik</i></button> 
+    </h5></span>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

@@ -1,0 +1,5 @@
+use projekat
+db.createCollection('korisniks')
+db.createCollection('proizvods')
+db.createCollection('narudzbinas')
+podaci za svaku kolekciju su u posebnim json fajlovima

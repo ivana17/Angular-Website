@@ -1,0 +1,20 @@
+<html>
+  <header><app-my-header [korisnik]='korisnik'></app-my-header></header>
+  <body class="center">
+    <form>
+      <mat-card>
+        <h2>Unesi podatke</h2>
+        <table align="center">
+          <tr><td><input type="text" placeholder="Naziv" name="naziv" [(ngModel)]='novi.naziv'></td></tr>
+          <tr><td><input type="text" placeholder="Mesto" name="mesto" [(ngModel)]='novi.mesto'></td></tr>
+          <tr><td><input type="text" placeholder="Duzina" name="duzina" [(ngModel)]='duzina'></td></tr>
+          <tr><td><input type="text" placeholder="Sirina" name="sirina" [(ngModel)]='sirina'></td></tr>
+          
+          <tr><td><button class="btn success" (click)='dodaj()'>Gotovo</button></td></tr>
+        </table>
+        <p style="color: red;">{{ poruka }}</p>
+      </mat-card>
+    </form>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>

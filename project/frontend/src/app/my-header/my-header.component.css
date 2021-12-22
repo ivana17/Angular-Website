@@ -1,0 +1,52 @@
+.head {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+
+    color: white;
+    height: 85px;
+
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+
+    border-bottom: 7px solid black;
+}
+h1 {
+    font-size: 25px;
+    position: absolute; top: 23px; left: 7%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+span {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute; top: 20px; right: 7%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn {
+    border: transparent;
+    background-color: transparent;
+    color: white;
+    padding: 6px 15px;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-bottom: 14px;
+    text-align: center;
+  
+  }
+  
+  .btn1 {
+    border: black solid 1px;
+    background-color: transparent;
+    color: white;
+    padding: 6px 11px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 14px;
+    text-align: center;
+  
+  }

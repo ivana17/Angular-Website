@@ -1,0 +1,56 @@
+body, html{
+  margin: 0px;
+  height: 92%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+mat-card h2{
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: darkcyan;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+::placeholder {
+  color: darkcyan;
+}
+.btn {
+  border: 2px solid darkcyan;
+  background-color: white;
+  color: darkcyan;
+  padding: 6px 15px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+
+}
+.btn:hover {
+  background-color: darkcyan;
+  color: black;
+}
+input {
+  width: 96%;
+  padding: 5px 10px;
+  margin: 7px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  box-sizing: border-box;
+  border: 1px solid darkcyan;
+  background-color: white;
+  color: darkcyan;
+}
+mat-card {
+  text-align: center;
+  width: 298px;
+  padding: 0; 
+  background: white;
+  margin-top: 40px;
+  border: 2px solid darkcyan;
+  align-content: center;
+  text-align: center;
+}

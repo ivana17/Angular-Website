@@ -1,0 +1,58 @@
+<!--
+      <div style="position: fixed; bottom: 4px; right: 4px;">
+        <a routerLink="/lozinka/{{_admin.kor_ime}}">Promeni lozinku</a>
+      </div>
+-->
+<html>
+  <header><app-my-header></app-my-header></header>
+
+  <body class="center">
+    <span><h5 style="position: fixed; bottom: 100px; right: 80px; font-family: cursive;">
+      <button mat-stroked-button color="accent" (click)="pregled()">Pregled svih korisnika</button>
+    </h5></span>
+    
+    <mat-list style="margin-top: 20px;">
+      <h1 style="font-size: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Zahtevi:</h1>
+      <hr>
+      <mat-list-item *ngFor="let item of korisniciArray;let i = index" >
+        
+        <div style="display:flex; justify-content:space-between;align-items:center"
+          *ngIf='item.tip>2'>
+          <div style="display:flex;align-items:center">
+            <mat-icon matListAvatar>chat</mat-icon>
+
+            <div style="display:flex; flex-direction:column">
+              <div style="margin-bottom: 10px;">
+                <h3 style="font-weight: bold;"> {{item.kor_ime}}</h3>
+              </div>
+              <div style="margin-top:-30px">
+                <p>
+                  <span *ngIf='item.tip==3;'>
+                    <app-poljoprivrednik-detalji [poljo]='item'></app-poljoprivrednik-detalji>
+                  </span>
+                  <span *ngIf="item.tip=='4';">
+                    <app-preduzece-detalji [pred]='item'></app-preduzece-detalji>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <div>
+            <button mat-icon-button (click)="prihvati(item)">
+              <mat-icon>done</mat-icon>
+            </button>
+            <button mat-icon-button (click)="odbij(item.kor_ime)">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </div>
+
+        </div>
+      </mat-list-item>
+      <span *ngIf='korisniciArray.length==0'>
+        <h4>Trenutno nema zahteva.</h4>
+      </span>
+    </mat-list>
+  </body>
+  <footer><app-my-footer></app-my-footer></footer>
+</html>
